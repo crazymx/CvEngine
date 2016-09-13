@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 
-<form action="add_db.php" method="post">
+<form action="" method="post">
 <p>
 	Enter your name :
     <input type="text" name="name" />
