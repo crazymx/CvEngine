@@ -1,8 +1,5 @@
 .setters cv
-.finir le cvManager
-	update
 
-.tester les requetes
 .class exp
 .class formation
 

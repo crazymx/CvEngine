@@ -10,6 +10,7 @@ class Cv{
 	private $_zipcode;
 	private $_city;
 	private $_country;
+	private $_phone;
 	private $_licence; 
 	private $_hobbies;
 
@@ -43,6 +44,7 @@ class Cv{
 	public function zipcode() { return $this->_zipcode; }
 	public function city() { return $this->_city; }
 	public function country() { return $this->_country; }
+	public function phone() { return $this->_phone; }
 	public function licence() { return $this->_licence; }
 	public function hobbies() { return $this->_hobbies; }
 
@@ -62,6 +64,7 @@ class Cv{
 	public function setZipcode($zipcode){ $this->_zipcode = $zipcode; }
 	public function setCity($city){ $this->_city = $city; }
 	public function setCountry($country){ $this->_country = $country; }
+	public function setPhone($phone){ $this->_phone = $phone; }
 	public function setLicence($licence){ $this->_licence = $licence; }
 	public function setHobbies($hobbies){ $this->_hobbies = $hobbies; }
 
@@ -74,7 +77,7 @@ class Cv{
 		echo 'dob: ' . $this->_dob . '<br/>';
 		echo 'address: ' . $this->_address . '<br/>';
 		echo 'city: ' . $this->_city . '<br/>';
-		echo '========<br/>';
+		echo '<br/>';
 	}
 
 

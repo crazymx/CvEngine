@@ -1,8 +1,8 @@
 <?php include('header.php'); ?>
 
-
+<h2>Liste des CV</h2>
 <?php
-
+/*
 $db_host = 'localhost';
 $db_name = 'cvmotor';
 $db_login = 'root';
@@ -17,10 +17,24 @@ $response = $db->query($request);
 while($data = $response->fetch()){
 	echo 'Name: ' . $data['name'];
 	echo '<br/>FirstName: ' . $data['firstname'];
+}*/
+
+$db = new PDO('mysql:host=localhost;dbname=cvmotor', 'root', '');
+$manager = new CvManager($db);
+
+$cvList = [];
+$cvList = $manager->getList();
+$len = count($cvList);
+//$cvList[$len-1]->show();
+
+
+foreach ($cvList as $key) {
+	$key->show();
 }
 
 
 
 
-$response->closeCursor();
+
+//$response->closeCursor();
 ?>

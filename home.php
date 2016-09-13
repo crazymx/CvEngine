@@ -7,47 +7,45 @@
   
   <body>
   <div id="conteneur">
-    <?php include('header.php'); ?>          
-    <h1 id="header"><span>CV Motor Project</span></h1>
+    <?php include('header.php'); ?>
+    <h2 id="header"><span>CV Motor Project</span></h2>
        
     <div id="contenu">
 
       <?php 
+        $db_host = 'localhost';
+        $db_name = 'cvmotor';
+        $db_login = 'root';
+        $db_pw = '';
+        //$db = new PDO('mysql:host='.$db_host.';dbname='.$db_name.';charset=utf8', $db_login, $db_pw);
         
 
         //$cv = new Cv;
         //$cv->getName();
 
         $cvtest = new Cv([
-          'cvid' => '5',
-          'name' => 'god',
-          'firstname' => 'mx',
+          'cvid' => '1',
+          'name' => 'Dupont',
+          'firstname' => 'Jean',
           'dob' => '2001-02-08',
           'address' => '3 rue des oiseaux',
           'zipcode' => '75019',
           'city' => 'Paris',
           'country' => 'France',
-          'licence' => 'Permis B',
+          'licence' => 'Permis A',
           'hobbies' => 'football'          
           ]);
 
+
+        
         $db = new PDO('mysql:host=localhost;dbname=cvmotor', 'root', '');
         $manager = new CvManager($db);
+
+        //$manager->update($cvtest);
         //$manager->add($cvtest);
-
-        $cvtest->show();
-
-        $cvMx = $manager->getCv(1);
-        $cvMx->show();
-
-
-
-
-        $cvList = [];
-        $cvList = $manager->getList();
-        $len = count($cvList);
-        $cvList[$len-1]->show();
-
+        //$cvtest->show();
+        //$cvMx = $manager->getCv(1);
+        //$cvMx->show();
         //$manager->delete($cvList[2]);
 
         
