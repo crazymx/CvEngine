@@ -1,0 +1,16 @@
+{
+    "name": "crazymx/cv-engine",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Max Godard",
+            "email": "mx.godard@gmail.com"
+        }
+    ],
+    "require": {
+        "php-di/silex-bridge": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    }
+}
