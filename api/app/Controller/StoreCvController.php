@@ -4,6 +4,8 @@ namespace CrazyMx\CvEngine\Controller;
 
 use CrazyMx\CvEngine\CvRepository;
 use CrazyMx\CvEngine\Model\CV;
+use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class StoreCvController
@@ -18,9 +20,9 @@ class StoreCvController
         $this->cvRepository = $cvRepository;
     }
 
-    public function __invoke(CV $cv)
+    public function __invoke(UuidInterface $uuid, CV $cv)
     {
         $this->cvRepository->store($cv);
-        return new Response('', Response::HTTP_CREATED);
+        return new JsonResponse(['id' => (string) $uuid], Response::HTTP_CREATED);
     }
 }
