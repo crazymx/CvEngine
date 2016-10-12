@@ -7,6 +7,7 @@ use CrazyMx\CvEngine\Controller\GetCvController;
 use CrazyMx\CvEngine\Controller\StoreCvController;
 use CrazyMx\CvEngine\Converter\CvConverter;
 use CrazyMx\CvEngine\Converter\UuidConverter;
+use CrazyMx\CvEngine\Converter\UuidGenerator;
 use Silex\Application;
 use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
@@ -29,6 +30,7 @@ class CvControllerProvider implements ControllerProviderInterface
          ->convert('uuid', UuidConverter::class );
 
          $controllers->post('/', StoreCvController::class)
+         ->convert('uuid', UuidGenerator::class )
          ->convert('cv', CvConverter::class);
 
         return $controllers;
