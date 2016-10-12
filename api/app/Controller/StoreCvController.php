@@ -4,6 +4,7 @@ namespace CrazyMx\CvEngine\Controller;
 
 use CrazyMx\CvEngine\CvRepository;
 use CrazyMx\CvEngine\Model\CV;
+use Symfony\Component\HttpFoundation\Response;
 
 class StoreCvController
 {
@@ -20,5 +21,6 @@ class StoreCvController
     public function __invoke(CV $cv)
     {
         $this->cvRepository->store($cv);
+        return new Response('', Response::HTTP_CREATED);
     }
 }
