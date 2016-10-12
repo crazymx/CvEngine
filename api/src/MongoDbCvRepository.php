@@ -31,6 +31,9 @@ class MongoDbCvRepository implements CvRepository
     public function get(UuidInterface $uuid)
     {
         $result = $this->collection->findOne(['_id' => (string) $uuid]);
+        if(empty($result)) {
+            throw new CvNotFoundException();
+        }
         return new CV(Uuid::fromString($result['_id']));
     }
 }

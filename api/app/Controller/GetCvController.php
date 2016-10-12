@@ -5,6 +5,7 @@ namespace CrazyMx\CvEngine\Controller;
 
 use CrazyMx\CvEngine\CvRepository;
 use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class GetCvController
 {
@@ -20,6 +21,6 @@ class GetCvController
 
     public function __invoke(UuidInterface $uuid)
     {
-        return $this->cvRepository->get($uuid);
+        return new JsonResponse($this->cvRepository->get($uuid));
     }
 }
