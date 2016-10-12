@@ -30,7 +30,6 @@ class CvControllerProvider implements ControllerProviderInterface
          ->convert('uuid', UuidConverter::class );
 
          $controllers->post('/', StoreCvController::class)
-         ->convert('uuid', UuidGenerator::class )
          ->convert('cv', CvConverter::class);
 
         return $controllers;

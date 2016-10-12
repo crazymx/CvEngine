@@ -20,9 +20,9 @@ class StoreCvController
         $this->cvRepository = $cvRepository;
     }
 
-    public function __invoke(UuidInterface $uuid, CV $cv)
+    public function __invoke(CV $cv)
     {
         $this->cvRepository->store($cv);
-        return new JsonResponse(['id' => (string) $uuid], Response::HTTP_CREATED);
+        return new JsonResponse(['id' => (string) $cv->uuid()], Response::HTTP_CREATED);
     }
 }
