@@ -4,7 +4,7 @@ namespace CrazyMx\CvEngine\Model;
 
 use Ramsey\Uuid\UuidInterface;
 
-class CV
+class CV implements \JsonSerializable
 {
     private $uuid;
 
@@ -20,5 +20,12 @@ class CV
     public function uuid()
     {
         return $this->uuid;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => (string) $this->uuid
+        ];
     }
 }
