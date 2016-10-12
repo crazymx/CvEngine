@@ -1,0 +1,11 @@
+cvengine:
+  build: .
+  links:
+    - mongodb
+  ports:
+    - "8080:80"
+
+mongodb:
+  image: mongo:3.3.15
+  ports:
+    - "27017:27017"
